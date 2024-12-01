@@ -1,24 +1,30 @@
 id: classify_image
+namespace: recyclify
 tasks:
   - id: train_model
-    type: python.script
-    inputs:
-      script: train.py
-    params:
-      dataset_path: /dataset/
-      output_model: /waste_classifier.h5
+    type: io.kestra.core.tasks.scripts.Python
+    commands:
+      - python train.py
+    args:
+      - "--dataset_path"
+      - "/dataset/"
+      - "--output_model"
+      - "/waste_classifier.h5"
 
   - id: upload_model
-    type: io.s3.upload
-    inputs:
-      bucket: my-bucket
-      key: /waste_classifier.h5
-      path: /waste_classifier.h5
-
+    type: io.kestra.plugin.aws.s3.Copy
+    from:
+      bucket: my-bucket # S3 bucket name
+      key: /waste_classifier.h5 # Key in the S3 bucket (file path)
+    to:
+      bucket: my-bucket # S3 destination bucket
+yaml
   - id: inference
-    type: python.script
-    inputs:
-      script: test.py
-    params:
-      model_path: /waste_classifier.h5
-      image_path: "{{inputs.image_path}}"
+    type: io.kestra.core.tasks.scripts.Python
+    commands:
+      - python test.py
+    args:
+      - "--model_path"
+      - "/waste_classifier.h5"
+      - "--image_path"
+      - "{{inputs.image_path}}"
