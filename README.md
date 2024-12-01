@@ -2,6 +2,8 @@
 
 Recyclify is an intelligent waste prediction platform that leverages image classification to identify and categorize waste as biodegradable or non-biodegradable. Using machine learning models, the platform analyzes user-uploaded images of waste items to predict their type and provide insights on how to properly dispose of or recycle them.
 
+<img src="web.png" alt="Topology"/>
+
 ## Features
 
 - Image Classification: Upload images of waste items to automatically classify them as biodegradable or non-biodegradable using a pre-trained image classification model.
@@ -47,3 +49,29 @@ Flask is used for creating the backend API that handles image uploads, processin
 ```bash
 pip install flask
 ```
+
+### Running Kestra
+
+```
+docker login
+```
+
+```
+docker pull kestra/kestra
+```
+
+```
+docker run -d -p 8080:8080 kestra/kestra
+```
+
+This would make the Kestra UI to open at
+
+```
+https://localhost/8080
+```
+
+<img src="image.png" alt="Topology"/>
+
+## Licence
+
+This project is licensed under the MIT License. See the LICENSE file for more details
