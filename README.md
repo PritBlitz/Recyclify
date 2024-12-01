@@ -50,6 +50,41 @@ Flask is used for creating the backend API that handles image uploads, processin
 pip install flask
 ```
 
+### Training Model
+
+Note : Due to Large size of the model the model could not be pushed so before running it train on your computer .
+These are the following steps :
+
+- Run train.py
+
+```
+python train.py
+```
+
+You would get a : waste_classifier.h5 file .
+
+This file is the model that we will use for prediction.
+
+- To test it run test.py
+
+```
+python test.py
+```
+
+- Now start the server by running app.py
+
+```
+python app.py
+```
+
+- The server would start running in
+
+```
+http://127.0.0.1:5000
+```
+
+- The Uploaded Image can be viewed for verification in the backend : static/upload
+
 ### Running Kestra
 
 ```
