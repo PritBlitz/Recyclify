@@ -1,0 +1,24 @@
+id: classify_image
+tasks:
+  - id: train_model
+    type: python.script
+    inputs:
+      script: train.py
+    params:
+      dataset_path: /dataset/
+      output_model: /waste_classifier.h5
+
+  - id: upload_model
+    type: io.s3.upload
+    inputs:
+      bucket: my-bucket
+      key: /waste_classifier.h5
+      path: /waste_classifier.h5
+
+  - id: inference
+    type: python.script
+    inputs:
+      script: test.py
+    params:
+      model_path: /waste_classifier.h5
+      image_path: "{{inputs.image_path}}"
