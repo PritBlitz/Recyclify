@@ -15,7 +15,7 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 
 model = load_model("waste_classifier.h5")
 
-test_image_path = "hackfrost_classification_model/img.jpg"
+test_image_path = "img.jpg"
 
 img = load_img(test_image_path, target_size=(150, 150))
 img_array = img_to_array(img) / 255.0  
