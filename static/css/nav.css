@@ -1,0 +1,76 @@
+/* Navbar Styles */
+.navbar {
+  background-color: #333;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+.navbar-links li {
+  margin-left: 20px;
+}
+
+.navbar-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.navbar-links a:nth-child(1):hover {
+  color: #ff6347;
+  background-color: rgba(255, 99, 71, 0.2);
+}
+
+.navbar-links a:nth-child(2):hover {
+  color: #1e90ff;
+  background-color: rgba(30, 144, 255, 0.2);
+}
+
+.navbar-links a:nth-child(3):hover {
+  color: #32cd32;
+  background-color: rgba(50, 205, 50, 0.2);
+}
+
+.navbar-links a:nth-child(4):hover {
+  color: #ff4500;
+  background-color: rgba(255, 69, 0, 0.2);
+}
+
+.navbar-links a:nth-child(5):hover {
+  color: #8a2be2;
+  background-color: rgba(138, 43, 226, 0.2);
+}
+
+.navbar-links a:active {
+  transform: scale(1);
+}
