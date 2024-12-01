@@ -5,7 +5,7 @@ from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropou
 from sklearn.model_selection import train_test_split
 import os
 
-dataset_path = "dataset/"
+dataset_path = "hackfrost_classification_model/dataset/"
 train_data_gen = ImageDataGenerator(
     rescale=1.0/255, 
     validation_split=0.2,
